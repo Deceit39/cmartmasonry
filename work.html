@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <link rel="icon" type="image/x-icon" href="images/Ishi (Logo)_Original.svg">
+    <title>Work - C Mart Masonry LLC</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+
+<body>
+    <header class="main-header">
+        <div class="logo-nav">
+            <img class="logo" src="images/logo-text.svg" alt="Company Logo">
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="work.html">Work</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+
+        <section class="gallery">
+            <h2>Portfolio</h2>
+            <div class="gallery-grid">
+                <img src="images/building.jpg" alt="Project 1" onclick="openModal(this.src)">
+                <img src="images/building2.jpg" alt="Project 2" onclick="openModal(this.src)">
+
+            </div>
+            <div class="gallery-description">
+                <p>Our portfolio showcases a range of commercial projects including custom brickwork, block structures, and stone features. Each job reflects our commitment to excellence, craftsmanship, and structural integrity.</p>
+            </div>
+        </section>
+
+        <div id="myModal" class="modal">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <img class="modal-content" id="modalImg">
+        </div>
+
+        <section class="work-details">
+            <h3>Our Process</h3>
+            <p>We begin every project with a thorough consultation to understand your vision and requirements. Our team then develops a detailed plan, ensuring that every aspect of the project is meticulously planned and executed. We believe in clear communication and collaboration with our clients from start to finish.</p>
+        </section>
+
+        <section class="services">
+            <h2>Services Offered (Commercial)</h2>
+            <ul>
+                <li>Block</li>
+                <li>Brick</li>
+                <li>Stone</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section logo-section">
+                <img class="logo" src="images/logo-text.svg" alt="Company Logo">
+                <p style="margin-top: 8px;">C Mart Masonry LLC<br>
+                <span style="font-size:0.95em;">"Where construction meets care"</span></p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="work.html">Work</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <p>Email: <a href="mailto:info.cmartmasonry@gmail.com">info.cmartmasonry@gmail.com</a></p>
+                <p>Phone: <a href="tel:919-802-2204">919-802-2204</a> & </p>
+                <a href="tel:919-432-3927">919-432-3927</a></p>
+                <div class="footer-social">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            &copy; 2025 C Mart Masonry LLC. All rights reserved.
+        </div>
+    </footer>
+
+    <script>
+        // Get the modal
+        var modal = document.getElementById("myModal");
+        var modalImg = document.getElementById("modalImg");
+
+        function openModal(src) {
+            modal.style.display = "block";
+            modalImg.src = src;
+        }
+
+        function closeModal() {
+            modal.style.display = "none";
+        }
+
+        // Close the modal when clicking outside the image
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                closeModal();
+            }
+        }
+    </script>
+</body>
+
+</html>

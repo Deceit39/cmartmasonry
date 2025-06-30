@@ -1,0 +1,706 @@
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Prevent font size inflation */
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+/* Remove default margin in favour of better control in authored CSS */
+body, h1, h2, h3, h4, p,
+figure, blockquote, dl, dd {
+  margin-block-end: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+}
+
+/* Set shorter line heights on headings and interactive elements */
+h1, h2, h3, h4,
+button, input, label {
+  line-height: 1.1;
+}
+
+/* Balance text wrapping on headings */
+h1, h2,
+h3, h4 {
+  text-wrap: balance;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+  color: currentColor;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input, button,
+textarea, select {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+/* Make sure textareas without a rows attribute are not tiny */
+textarea:not([rows]) {
+  min-height: 10em;
+}
+
+/* Anything that has been anchored to should have extra scroll margin */
+:target {
+  scroll-margin-block: 5ex;
+}
+
+/* css/style.css */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f6fa;
+    color: #23272f;
+    transition: background 0.3s;
+}
+
+.main-header {
+    border-bottom: none;
+    padding: 18px 32px;
+    box-shadow: 0 2px 8px rgba(45,62,80,0.07);
+    animation: fadeInDown 1s;
+}
+
+.logo-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.logo {
+    max-height: 120px;
+    width: auto;
+    filter: drop-shadow(0 2px 6px rgba(0,0,0,0.08));
+    transition: transform 0.3s;
+}
+
+.main-nav ul {
+    list-style: none;
+    display: flex;
+    gap: 28px;
+}
+
+.main-nav a {
+    text-decoration: none;
+    color: #23272f;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    font-size: 1.25em;
+    position: relative;
+    transition: color 0.2s;
+}
+
+.main-nav a::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: #f9b233;
+    transition: width 0.3s;
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+}
+
+.main-nav a:hover {
+    color: #f9b233;
+}
+
+.main-nav a:hover::after {
+    width: 100%;
+}
+
+.hero {
+    position: relative;
+    text-align: center;
+    color: #fff;
+    animation: fadeIn 1.2s;
+}
+
+.hero-image {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    display: block;
+    filter: brightness(0.7);
+}
+
+.hero-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(45, 62, 80, 0.7);
+    padding: 32px 40px;
+    border-radius: 14px;
+    box-shadow: 0 4px 24px rgba(45,62,80,0.13);
+}
+
+.hero-text h1 {
+    font-size: 2.8em;
+    font-family: 'Segoe UI Semibold', 'Roboto', Arial, sans-serif;
+    color: #f9b233;
+    margin-bottom: 0.3em;
+    letter-spacing: 0.04em;
+}
+
+.hero-text p {
+    font-size: 1.3em;
+    color: #fff;
+    font-style: italic;
+}
+
+.about-section {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 48px 24px;
+    background: #fff;
+    gap: 32px;
+    border-radius: 18px;
+    margin: 32px auto;
+    max-width: 1200px;
+    box-shadow: 0 2px 16px rgba(45,62,80,0.06);
+    animation: fadeIn 1.2s;
+}
+
+.about-image img {
+    max-width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(45,62,80,0.09);
+    animation: fadeInLeft 1.2s;
+}
+
+.about-image {
+    flex: 1 1 40%;
+    min-width: 300px;
+}
+
+.about-text {
+    flex: 1 1 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    animation: fadeInRight 1.2s;
+}
+
+.about-text h2 {
+    margin-bottom: 12px;
+    font-size: 2em;
+    color: #2d3e50;
+    font-family: 'Segoe UI Semibold', 'Roboto', Arial, sans-serif;
+}
+
+.center-heading {
+    text-align: center;
+}
+
+.footer {
+    background: linear-gradient(90deg, #23272f 0%, #2d3e50 100%);
+    color: #f4f6fa;
+    padding: 36px 20px 16px 20px;
+    text-align: center;
+    border-top-left-radius: 24px;
+    border-top-right-radius: 24px;
+    margin-top: 48px;
+    box-shadow: 0 -2px 16px rgba(45,62,80,0.09);
+    animation: fadeInUp 1.2s;
+    position: relative;
+}
+
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 1200px;
+    margin: 0 auto 12px auto;
+    gap: 32px;
+}
+
+.footer-section {
+    flex: 1 1 200px;
+    min-width: 180px;
+    margin-bottom: 12px;
+}
+
+.footer-section.logo-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-section .logo {
+    background-color: white;
+    border-radius: 30%;
+    padding: 10px;
+    max-width: 140px;
+    margin-bottom: 10px;
+}
+
+.footer-section h3 {
+    color: #f9b233;
+    font-size: 1.15em;
+    margin-bottom: 10px;
+    font-family: 'Segoe UI Semibold', 'Roboto', Arial, sans-serif;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links li {
+    margin-bottom: 6px;
+}
+
+.footer-links a {
+    color: #f4f6fa;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.footer-links a:hover {
+    color: #f9b233;
+}
+
+.footer-social {
+    display: flex;
+    justify-content: center; /* Center the social media icons */
+    gap: 16px;
+    margin-top: 8px;
+}
+
+.footer-social a {
+    color: #f9b233;
+    font-size: 1.5em;
+    transition: color 0.2s, transform 0.2s;
+}
+
+.footer-social a:hover {
+    color: #fff;
+    transform: scale(1.15);
+}
+
+.footer-copyright {
+    font-size: 0.98em;
+    color: #bfc7d1;
+    margin-top: 8px;
+}
+
+.services {
+    padding: 40px 20px;
+    background: #f9f9fb;
+    text-align: center;
+    border-radius: 18px;
+    margin: 32px auto;
+    max-width: 900px;
+    box-shadow: 0 2px 12px rgba(45,62,80,0.05);
+    animation: fadeIn 1.2s;
+}
+
+.services h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #2d3e50;
+}
+
+.services ul {
+    list-style: none;
+    padding: 0;
+}
+
+.services li {
+    font-size: 1.2em;
+    margin: 10px 0;
+    color: #4e5d6c;
+    transition: color 0.2s;
+}
+
+.services li:hover {
+    color: #f9b233;
+}
+
+.gallery {
+    padding: 40px 20px;
+    background: #fff;
+    border-radius: 18px;
+    margin: 32px auto;
+    max-width: 1200px;
+    box-shadow: 0 2px 12px rgba(45,62,80,0.05);
+    animation: fadeIn 1.2s;
+}
+
+.gallery h2 {
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 30px;
+    color: #2d3e50;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.gallery-grid img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(45,62,80,0.08);
+    transition: transform 0.3s, box-shadow 0.3s;
+    animation: fadeIn 1.2s;
+    cursor: pointer;
+}
+
+.gallery-grid img:hover {
+    transform: scale(1.04) rotate(-1deg);
+    box-shadow: 0 6px 24px rgba(45,62,80,0.13);
+}
+
+.gallery-description {
+    margin-top: 18px;
+    color: #4e5d6c;
+    font-size: 1.1em;
+    text-align: center;
+}
+
+.contact-section {
+    display: flex;
+    gap: 32px;
+    padding: 48px 24px;
+    background: #fff;
+    border-radius: 18px;
+    margin: 32px auto;
+    max-width: 900px;
+    box-shadow: 0 2px 12px rgba(45,62,80,0.07);
+    animation: fadeIn 1.2s;
+}
+
+.contact-description {
+    flex: 2;
+}
+
+.contact-image {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contact-image img {
+    max-width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(45,62,80,0.08);
+}
+
+.get-in-touch {
+    margin-bottom: 2rem;
+}
+
+.contact-form {
+    background: #f4f6fa;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(45,62,80,0.07);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    animation: fadeInUp 1.2s;
+}
+
+.contact-form label {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: #2d3e50;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 0.75rem;
+    border: 1px solid #bfc7d1;
+    border-radius: 4px;
+    font-size: 1rem;
+    resize: vertical;
+    background: #fff;
+    transition: border 0.2s;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border: 1.5px solid #f9b233;
+    outline: none;
+}
+
+.contact-form textarea {
+    min-height: 120px;
+}
+
+.contact-form button {
+    background: linear-gradient(90deg, #f9b233 0%, #f7c873 100%);
+    color: #23272f;
+    padding: 0.75rem;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s, color 0.2s;
+    box-shadow: 0 2px 8px rgba(45,62,80,0.07);
+}
+
+.contact-form button:hover {
+    background: #23272f;
+    color: #f9b233;
+}
+
+/* Privacy Policy Styles */
+.privacy-policy {
+    max-width: 900px;
+    margin: 48px auto;
+    background: #fff;
+    border-radius: 18px;
+    padding: 40px 32px;
+    box-shadow: 0 2px 12px rgba(45,62,80,0.07);
+    color: #23272f;
+    animation: fadeIn 1.2s;
+}
+
+.privacy-policy h1, .privacy-policy h2 {
+    color: #2d3e50;
+    font-family: 'Segoe UI Semibold', 'Roboto', Arial, sans-serif;
+}
+
+.privacy-policy h1 {
+    font-size: 2.2em;
+    margin-bottom: 18px;
+}
+
+.privacy-policy h2 {
+    font-size: 1.3em;
+    margin-top: 24px;
+    margin-bottom: 10px;
+}
+
+.privacy-policy p, .privacy-policy ul {
+    font-size: 1.08em;
+    margin-bottom: 14px;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(40px);}
+    to { opacity: 1; transform: translateY(0);}
+}
+
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-40px);}
+    to { opacity: 1; transform: translateY(0);}
+}
+
+@keyframes fadeInLeft {
+    from { opacity: 0; transform: translateX(-40px);}
+    to { opacity: 1; transform: translateX(0);}
+}
+
+@keyframes fadeInRight {
+    from { opacity: 0; transform: translateX(40px);}
+    to { opacity: 1; transform: translateX(0);}
+}
+
+/* Modal styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.8);
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.work-details {
+    padding: 40px 20px;
+    background: #f9f9fb;
+    text-align: center;
+    border-radius: 18px;
+    margin: 32px auto;
+    max-width: 900px;
+    box-shadow: 0 2px 12px rgba(45,62,80,0.05);
+}
+
+.work-details h3 {
+    font-size: 1.8em;
+    margin-bottom: 15px;
+    color: #2d3e50;
+}
+
+.work-details p {
+    font-size: 1.1em;
+    color: #4e5d6c;
+    line-height: 1.7;
+}
+
+/* ==========================================================================
+   Responsive Design - Mobile
+   ========================================================================== */
+
+
+
+/* Mobile phones (e.g., iPhone portrait) */
+@media (max-width: 767px) {
+    .main-header {
+        padding: 16px;
+    }
+
+    .logo-nav {
+        flex-direction: column; /* Stack logo and nav vertically */
+        align-items: center;   /* Center them horizontally */
+        gap: 16px;             /* Add space between logo and nav */
+    }
+
+    .main-nav ul {
+        flex-direction: row;      /* Arrange nav links horizontally */
+        flex-wrap: wrap;          /* Allow links to wrap */
+        justify-content: center;  /* Center the links */
+        gap: 16px;                /* Space between links */
+        padding-left: 0;
+        margin-top: 0;
+    }
+    
+    .main-nav a {
+        font-size: 1.2em; /* Make tap targets slightly larger */
+    }
+
+    .logo {
+        max-height: 100px; /* Reduce logo size on mobile */
+    }
+
+    .hero-image {
+        height: 300px; /* Reduce hero height */
+    }
+
+    .hero-text {
+        padding: 24px;
+        width: 90%;
+    }
+
+    .hero-text h1 {
+        font-size: 2em;
+    }
+
+    .hero-text p {
+        font-size: 1.1em;
+    }
+
+    /* Reduce padding and margins for all main sections on small screens */
+    .about-section,
+    .gallery,
+    .services,
+    .work-details,
+    .privacy-policy,
+    .contact-section {
+        padding-left: 16px;
+        padding-right: 16px;
+        margin-top: 24px;
+        margin-bottom: 24px;
+    }
+
+    .about-text h2 {
+        font-size: 1.8em;
+    }
+    
+    .contact-section {
+        text-align: center;
+    }
+
+    .contact-image {
+        /* Hide the decorative image on the contact page for mobile to save space and focus on content */
+        display: none;
+    }
+    
+    
+    .footer-content {
+        gap: 0; /* Further reduce vertical space between footer sections */
+    }
+
+    .gallery-grid {
+        /* Adjust grid for smaller screens */
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 16px;
+    }
+}
+
+
