@@ -138,9 +138,8 @@
             </div>
             <div class="footer-section">
                 <h3>Contact</h3>
-                <p>Email: <a href="mailto:info.cmartmasonry@gmail.com">info.cmartmasonry@gmail.com</a></p>
-                <p>Phone: <a href="tel:919-802-2204">919-802-2204</a> & </p>
-                <a href="tel:919-432-3927">919-432-3927</a></p>
+                <p>Email: <span id="footer-email-link"></span></p>
+                <p>Phone: <span id="footer-phone1-link"></span> & <span id="footer-phone2-link"></span></p>
                 <div class="footer-social">
                     <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
                     <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
@@ -152,5 +151,24 @@
             &copy; 2025 C Mart Masonry LLC. All rights reserved.
         </div>
     </footer>
+    <script>
+        // Email and phone obfuscation
+        function obfuscateEmail(user, domain) {
+            var email = user + "@" + domain;
+            var link = document.createElement('a');
+            link.href = "mailto:" + email;
+            link.textContent = email;
+            return link;
+        }
+        function obfuscatePhone(number) {
+            var link = document.createElement('a');
+            link.href = "tel:" + number.replace(/-/g, '');
+            link.textContent = number;
+            return link;
+        }
+        document.getElementById('footer-email-link').appendChild(obfuscateEmail('info.cmartmasonry', 'gmail.com'));
+        document.getElementById('footer-phone1-link').appendChild(obfuscatePhone('919-802-2204'));
+        document.getElementById('footer-phone2-link').appendChild(obfuscatePhone('919-432-3927'));
+    </script>
 </body>
 </html>
